@@ -1,31 +1,70 @@
-# Spotify Clone (spotify-clone)
+# 🎵 Spotify Clone – Vue 3 Project
 
-### Learn how to build this!
+A modern **Spotify clone** built with **Vue 3**, **Vite**, and **TailwindCSS**, featuring state management with **Pinia** and routing with **Vue Router**.
 
-If you'd like a step by step guide on how to build this just **CLICK THE IMAGE BELOW**
+Live Demo: [https://spotify-clone-azure-seven.vercel.app/](https://spotify-clone-azure-seven.vercel.app/)
 
-[![GO TO JOHN WEEKS DEV TUTORIAL VIDEOS](https://user-images.githubusercontent.com/108229029/216832225-fe8ffbb9-4f26-47f5-a236-e77790000018.png)](https://www.youtube.com/watch?v=ZzuqwqP1wAQ)
+---
 
-Come and check out my YOUTUBE channel for lots more tutorials -> https://www.youtube.com/@johnweeksdev
+## 📌 Features
 
-**LIKE**, **SUBSCRIBE**, and **SMASH THE NOTIFICATION BELL**!!!
+### 🖥️ User Features
+- Browse music tracks, albums, and playlists  
+- Play/pause tracks with audio player  
+- Search for songs and artists  
+- Dynamic theming using `uniqolor`  
+- Responsive UI (desktop & mobile)  
+- Reusable components for music cards, playlist lists, and player controls  
 
-## App Setup
+### 🔧 Admin / Dev Features
+- State management with Pinia + persisted state  
+- Routing with Vue Router for multi-page navigation  
+- TailwindCSS for styling and layout  
+- Material Design icons for UI elements  
 
+---
+
+## 🛠 Tech Stack
+
+### **Frontend**
+- Vue 3 (Composition API)  
+- Vite 4  
+- TailwindCSS 3  
+- Pinia + Pinia PersistedState  
+- Vue Router 4  
+- vue-material-design-icons  
+- uniqolor (dynamic colors for playlists and tracks)  
+
+### **Development Tools**
+- Vite plugin Vue  
+- PostCSS + Autoprefixer  
+
+---
+
+## 📦 Installation & Development
+
+### 1️⃣ Clone the project
+```bash
+git clone https://github.com/tcuong2003/Spotify_Clone.git
+cd spotify-clone
 ```
-git clone https://github.com/John-Weeks-Dev/spotify-clone.git
 
-npm i
+### 2️⃣ Install dependencies
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+```
 
+### 3️⃣ Run development server
+```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-You should be good to go! ROCK THE F**K OUT!!!
-
-# Application Images
-
-<img width="1439" alt="Screenshot 2023-02-04 at 12 33 25" src="https://user-images.githubusercontent.com/108229029/216750826-56af149d-648b-43a7-ac85-a0ebdf700645.png">
-<img width="1439" alt="Screenshot 2023-02-04 at 12 37 25" src="https://user-images.githubusercontent.com/108229029/216750833-6581e270-4189-4132-a604-090458c143cf.png">
-<img width="1440" alt="Screenshot 2023-02-04 at 12 41 31" src="https://user-images.githubusercontent.com/108229029/216751013-8b2ac380-e068-448d-80d4-21b5b59647ea.png">
-<img width="1440" alt="Screenshot 2023-02-04 at 12 36 20" src="https://user-images.githubusercontent.com/108229029/216750956-5a1164c3-1a44-4afe-abc2-5ffdb633a241.png">
-
+Open [http://localhost:5173](http://localhost:5173) in your browser.
