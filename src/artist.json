@@ -1,63 +1,62 @@
 {
-    "name": "Diaries Of A Hero",
-    "albumCover": "/images/albumCovers/DiariesOfAHero.png",
-    "releaseYear": "2014",
+    "name": "The Midnight Echo",
+    "albumCover": "/images/albumCovers/MidnightEcho.png",
+    "releaseYear": "2023",
     "tracks": [
         {
             "id": 1,
-            "name": "Intro",
-            "path": "/songs/Intro.mp3"
+            "name": "Neon Lights",
+            "path": "/songs/NeonLights.mp3"
         },
         {
             "id": 2,
-            "name": "Solitude",
-            "path": "/songs/Solitude.mp3"
+            "name": "Whispers in the Dark",
+            "path": "/songs/WhispersInTheDark.mp3"
         },
         {
             "id": 3,
-            "name": "Manimal",
-            "path": "/songs/Manimal.mp3"
+            "name": "Electric Dreams",
+            "path": "/songs/ElectricDreams.mp3"
         },
         {
             "id": 4,
-            "name": "J5",
-            "path": "/songs/J5.mp3"
+            "name": "City Rain",
+            "path": "/songs/CityRain.mp3"
         },
         {
             "id": 5,
-            "name": "Throne",
-            "path": "/songs/Throne.mp3"
+            "name": "Lost in Time",
+            "path": "/songs/LostInTime.mp3"
         },
         {
             "id": 6,
-            "name": "Scarwhores",
-            "path": "/songs/Scarwhores.mp3"
+            "name": "Heartbeat Symphony",
+            "path": "/songs/HeartbeatSymphony.mp3"
         },
         {
             "id": 7,
-            "name": "Highschool Funeral",
-            "path": "/songs/Highschool Funeral.mp3"
+            "name": "Midnight Drive",
+            "path": "/songs/MidnightDrive.mp3"
         },
         {
             "id": 8,
-            "name": "Get Away",
-            "path": "/songs/Get Away.mp3"
+            "name": "Fading Stars",
+            "path": "/songs/FadingStars.mp3"
         },
         {
             "id": 9,
-            "name": "Victims of Chaos",
-            "path": "/songs/Victims of Chaos.mp3"
+            "name": "Rhythm of the Night",
+            "path": "/songs/RhythmOfTheNight.mp3"
         },
         {
             "id": 10,
-            "name": "Neruda",
-            "path": "/songs/Neruda.mp3"
+            "name": "Echoes of Yesterday",
+            "path": "/songs/EchoesOfYesterday.mp3"
         },
         {
             "id": 11,
-            "name": "Brother",
-            "path": "/songs/Brother.mp3"
+            "name": "Infinite Horizon",
+            "path": "/songs/InfiniteHorizon.mp3"
         }
     ]
 }
-
