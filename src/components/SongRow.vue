@@ -1,12 +1,14 @@
 <script setup>
-import { ref, toRefs, onMounted } from 'vue'
+import { ref, toRefs, onMounted, computed } from 'vue'
 import Heart from 'vue-material-design-icons/Heart.vue';
 import Play from 'vue-material-design-icons/Play.vue';
 import Pause from 'vue-material-design-icons/Pause.vue';
 
 import { useSongStore } from '../stores/song'
+import { useUserStore } from '../stores/user'
 import { storeToRefs } from 'pinia';
 const useSong = useSongStore()
+const userStore = useUserStore()
 const { isPlaying, currentTrack } = storeToRefs(useSong)
 
 let isHover = ref(false)
@@ -19,6 +21,8 @@ const props = defineProps({
 })
 
 const { track, artist, index } = toRefs(props)
+
+const isLiked = computed(() => userStore.likedSongs.some(s => s.id === track.value.id))
 
 onMounted(() => {
     const audio = new Audio(track.value.path);
@@ -70,8 +74,8 @@ onMounted(() => {
             </div>
         </div>
         <div class="flex items-center">
-            <button type="button" v-if="isHover">
-                <Heart fillColor="#1BD760" :size="22"/>
+            <button type="button" v-if="isHover" @click="userStore.toggleLikeSong(track)">
+                <Heart :fillColor="isLiked ? '#1BD760' : '#FFFFFF'" :size="22"/>
             </button>
             <div
                 v-if="isTrackTime"

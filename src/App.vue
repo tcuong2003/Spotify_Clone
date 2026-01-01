@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import MenuItem from "./components/MenuItem.vue";
 import MusicPlayer from "./components/MusicPlayer.vue";
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
@@ -9,8 +9,12 @@ import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
 
 import { useSongStore } from "./stores/song";
+import { useUserStore } from "./stores/user";
 import { storeToRefs } from "pinia";
+
+const router = useRouter();
 const useSong = useSongStore();
+const userStore = useUserStore();
 const { isPlaying, currentTrack } = storeToRefs(useSong);
 
 onMounted(() => {
@@ -18,6 +22,11 @@ onMounted(() => {
 });
 
 let openMenu = ref(false);
+
+const logout = () => {
+  userStore.logout();
+  router.push('/login');
+};
 </script>
 
 <template>
@@ -75,10 +84,10 @@ let openMenu = ref(false);
         class="fixed w-[190px] bg-[#282828] shadow-2xl z-50 rounded-sm top-[52px] right-[35px] p-1 cursor-pointer"
       >
         <ul class="text-gray-200 font-semibold text-[14px]">
-          <li class="px-3 py-2.5 hover:bg-[#3E3D3D] border-b border-b-gray-600">
+          <li @click="router.push('/profile')" class="px-3 py-2.5 hover:bg-[#3E3D3D] border-b border-b-gray-600">
             Profile
           </li>
-          <li class="px-3 py-2.5 hover:bg-[#3E3D3D]">Log out</li>
+          <li @click="logout" class="px-3 py-2.5 hover:bg-[#3E3D3D]">Log out</li>
         </ul>
       </span>
     </div>
@@ -117,41 +126,32 @@ let openMenu = ref(false);
           />
         </RouterLink>
         <div class="py-3.5"></div>
-        <MenuItem
-          :iconSize="24"
-          name="Create Playlist"
-          iconString="playlist"
-          pageUrl="/playlist"
-        />
-        <MenuItem
-          class="-ml-[1px]"
-          :iconSize="27"
-          name="Liked Songs"
-          iconString="liked"
-          pageUrl="/liked"
-        />
+        <RouterLink to="/create-playlist">
+          <MenuItem
+            :iconSize="24"
+            name="Create Playlist"
+            iconString="playlist"
+            pageUrl="/create-playlist"
+          />
+        </RouterLink>
+        <RouterLink to="/liked-songs">
+          <MenuItem
+            class="-ml-[1px]"
+            :iconSize="27"
+            name="Liked Songs"
+            iconString="liked"
+            pageUrl="/liked-songs"
+          />
+        </RouterLink>
       </ul>
       <div class="border-b border-b-gray-700"></div>
       <ul>
         <li
-          class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
+          v-for="playlist in userStore.playlists"
+          :key="playlist.id"
+          class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white cursor-pointer"
         >
-          My Playlist #1
-        </li>
-        <li
-          class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
-        >
-          My Playlist #2
-        </li>
-        <li
-          class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
-        >
-          My Playlist #3
-        </li>
-        <li
-          class="font-semibold text-[13px] mt-3 text-gray-300 hover:text-white"
-        >
-          My Playlist #4
+          {{ playlist.name }}
         </li>
       </ul>
     </div>
